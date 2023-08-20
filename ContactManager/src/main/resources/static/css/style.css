@@ -1,0 +1,129 @@
+body{
+	background-color: #e2e2e2;
+}
+.bg-primary{
+	background-color: #009688 !important;
+}
+
+.banner{
+	width:100%;
+	height:93vh;
+	background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.6)), url("./images/banner.jpg");
+	background-size: cover;
+	color:white;
+	font-weight: bold;
+}
+
+.mycard{
+	margin-top: 15px;
+	padding:20px;
+	background: #ffffff;
+	border-radius: 10px;
+	align-items: center;
+}
+.mylogincard{
+	position: absolute;
+	margin-top: 15px;
+	padding:20px;
+	width:50%;
+	background: #ffffff;
+	border-radius: 10px;
+	align-items: center;
+	transform: translate(50%,10%);
+}
+.form-area{
+	padding-top: 20px;
+}
+label{
+	margin-top: 3px;
+	font-weight: bold;
+	margin-left: 5%;
+}
+.input-field{
+	margin-left: 5%;
+	padding-bottom: 5px;
+	width: 90%;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0; 
+	color: black;
+	outline: 0;
+}
+#submit-button:hover{
+	background: #009688;
+	color:white;
+	
+}
+#reset-button:hover{
+	background: rgb(255, 128, 0);
+	color:white;
+	
+}
+/***************************Sidebar***************************/
+
+@media only screen and (max-width:600px){
+	.sidebar{
+		display:none;
+	width:80% !important;
+	background: white;
+	height: 100%;
+	position: fixed;
+	padding-top: 20px;	
+	}
+	.content{
+	margin-left: 0%;
+	}
+
+}
+.sidebar{
+	width:16%;
+	background: white;
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;	
+	}
+.sidebar a{
+	display:block;
+	width: 100%;
+	padding:10px 25px ;
+	text-decoration: none;
+	color:grey;
+}
+.sidebar a:hover{
+	background: #e2e2e2;
+}
+.sidebar .devider{
+	height: .5px;
+	width:100%;
+	background: #e2e2e2;
+	margin-top: 10px;
+}
+
+.content{
+	margin-top: 20px;
+	margin-left: 18%;
+}
+
+/***************************Add Contact**************************/
+
+.content .mycard{
+	margin-top: 0;
+	width: 50%;
+	padding:5px;
+	background: #ffffff;
+	border-radius: 10px;
+	align-items: center;
+	transform: translate(50%,10%);
+}
+
+/*******************************************/
+
+.profile_img{
+	margin-top: 3px;
+	width: 30px;
+	height: 35px;
+	object-fit: cover;
+	border-radius: 70%;
+}
+
+

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Contact Details</title>
+
+</head>
+
+<body>
+	<div th:include="normal/base"></div>
+	<div class="content">
+		<i onclick="togglesidebar()" class="fas fa-bars mt-5" style="font-size: 20px;"></i>
+		
+		<div class="card mr-4">
+			<div class="card-body">
+			
+				<div class="container text-center"> <img style="width:150px; height: 150px;" class="profile_img" th:src="@{'/css/images/'+${contact.imageUrl}}" alt="" /> </div>
+				<div class="text-center mt-3" style="font-weight: bold;"><span th:text="${contact.name}+' ('+${contact.nickName}+')'"></span></div>
+				<table align="center" class="table table-bordered  mt-3" style="width: 60%;">
+					
+						<tr>
+							<th scope="col">Id</th>
+							<td> <span th:text="${'CM2022'+contact.cId}"></span> </td>
+							
+							
+						</tr>
+						<tr>
+							
+							<th scope="col">Phone</th>
+							<td> <span th:text="${contact.phone}"></span> </td>
+							
+						</tr>
+						<tr>
+							
+							<th scope="col">Email</th>
+							<td> <span th:text="${contact.email}"></span> </td>
+							
+						</tr>
+						<tr>
+							
+							<th scope="col">Work</th>
+							<td> <span th:text="${contact.work}"></span> </td>
+						</tr>
+				
+				</table>
+				<div class="text-center">
+				<h3>Description</h3>
+				<span th:utext="${contact.description}"></span>
+				</div>
+				<div class="text-center"><a th:href="@{/user/showContacts}" class="btn btn-danger">Back</a></div>
+		
+	</div>
+</body>
+
+</html>

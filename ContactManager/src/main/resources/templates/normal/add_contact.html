@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Add Contact</title>
+
+</head>
+
+<body>
+	<div th:include="normal/base"></div>
+	<div class="content">
+		<i onclick="togglesidebar()" class="fas fa-bars mt-5" style="font-size: 20px;"></i>
+		<div class="row">
+			<div class="col-md-10 offset-md-1">
+				<div class=" mycard">
+					<h2 class="text-center"><i class="fa-solid fa-address-book"></i><span th:text="${heading}"></span></h2>
+					<div th:if="${contact.cId > 0}" class="container text-center"> <img style="width:100px; height: 100px;"
+									class="profile_img" th:src="@{'/css/images/'+${contact.imageUrl}}" alt="" /> </div>
+					<form action="#" th:action="@{/user/process-contact}" method="post" enctype="multipart/form-data"
+						th:object="${contact}" class="form-area">
+						<div class="form-group">
+						<input type="hidden" th:value="${contact.cId}" name="cId" />
+							<label> Name:</label><input name="name" th:value="${contact.name}" class="input-field"
+								type="text" placeholder="Enter Here" required>
+							<label>Nick Name:</label> <input name="nickName" th:value="${contact.nickName}"
+								class="input-field" type="text" placeholder="Enter Nick Name">
+							<label> Phone:</label> <input name="phone" th:value="${contact.phone}" class="input-field"
+								type="text" placeholder="Enter phone" required>
+							<label> Email:</label> <input name="email" th:value="${contact.email}" class="input-field"
+								type="email" placeholder="Enter email" required>
+							<label> Work:</label> <input name="work" th:value="${contact.work}" class="input-field"
+								type="text" placeholder="Enter work field here" required>
+							<label> Description:</label> <textarea name="description" th:field="${contact.description}"
+								class="input-field" type="text" placeholder="Enter somthing about person"
+								required></textarea>
+							
+							<label>Photo:&nbsp; &nbsp;&nbsp;</label><input name="image" type="file" />
+						</div>
+						<div th:if="${contact.cId == 0}" class="text-center"><button class="btn btn-success" type="submit">Save</button></div>
+						<div th:if="${contact.cId > 0}" class="text-center"><button class="btn btn-success" type="submit">Update</button></div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
